@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx3j6taat0hti"]
+
+[ext_resource type="Script" path="res://scenes/ui/button/button.gd" id="1_iay41"]
+
+[node name="Button" type="Button"]
+texture_filter = 1
+focus_mode = 0
+text = "Button"
+script = ExtResource("1_iay41")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

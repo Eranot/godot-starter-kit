@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=3 uid="uid://tij21ihdxvel"]
+
+[ext_resource type="Theme" uid="uid://dijqjy6cqknsb" path="res://assets/themes/ui_theme.tres" id="1_rlbgw"]
+[ext_resource type="Script" path="res://scenes/menu/main_menu/main_menu.gd" id="2_2sew7"]
+[ext_resource type="Texture2D" uid="uid://dssyq1e67vbei" path="res://assets/sprites/ui/menu-background.png" id="3_70o2q"]
+[ext_resource type="PackedScene" uid="uid://dx3j6taat0hti" path="res://scenes/ui/button/button.tscn" id="4_7pu57"]
+[ext_resource type="Script" path="res://addons/max_size_container/max_size_container.gd" id="4_eqyov"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rlbgw")
+script = ExtResource("2_2sew7")
+play_scene_file = "res://scenes/level/level_01/level_01.tscn"
+options_scene_file = "res://scenes/menu/game_options/game_options.tscn"
+credits_scene_file = "res://scenes/menu/credits/credits.tscn"
+
+[node name="Background" type="TextureRect" parent="."]
+layout_direction = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_70o2q")
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="MaxSizeContainer" type="MarginContainer" parent="MarginContainer"]
+offset_left = 24.0
+offset_top = 260.0
+offset_right = 1128.0
+offset_bottom = 388.0
+size_flags_vertical = 4
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+script = ExtResource("4_eqyov")
+max_size = Vector2(350, 0)
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="MarginContainer/MaxSizeContainer"]
+offset_left = 377.0
+offset_right = 727.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" parent="MarginContainer/MaxSizeContainer/ButtonsContainer" instance=ExtResource("4_7pu57")]
+offset_right = 350.0
+offset_bottom = 40.0
+text = "Play"
+
+[node name="OptionsButton" parent="MarginContainer/MaxSizeContainer/ButtonsContainer" instance=ExtResource("4_7pu57")]
+offset_top = 44.0
+offset_right = 350.0
+offset_bottom = 84.0
+text = "Options"
+
+[node name="CreditsButton" parent="MarginContainer/MaxSizeContainer/ButtonsContainer" instance=ExtResource("4_7pu57")]
+offset_top = 88.0
+offset_right = 350.0
+offset_bottom = 128.0
+text = "Credits"
+
+[connection signal="pressed" from="MarginContainer/MaxSizeContainer/ButtonsContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MaxSizeContainer/ButtonsContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/MaxSizeContainer/ButtonsContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
