@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="StarterKit"
-run/main_scene="res://scenes/menu/main_menu/main_menu.tscn"
+run/main_scene="res://scenes/menu/splash_screen/splash_screen.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SoundController="*res://global/sound_controller/sound_controller.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
