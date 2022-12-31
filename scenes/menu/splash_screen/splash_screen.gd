@@ -5,8 +5,8 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	await get_tree().create_timer(2).timeout
-	get_tree().create_tween().tween_property(%GodotScreen, "modulate", Color.hex(0xffffffff), 1)
+	get_tree().create_tween().tween_property(%RecursivoScreen, "modulate", Color.hex(0xffffffff), 1)
 	await get_tree().create_timer(3).timeout
-	get_tree().create_tween().tween_property(%GodotScreen, "modulate", Color.hex(0xffffff00), 1)
+	get_tree().create_tween().tween_property(%RecursivoScreen, "modulate", Color.hex(0xffffff00), 1)
 	await get_tree().create_timer(2).timeout
 	get_tree().change_scene_to_file(menu_scene_file)
