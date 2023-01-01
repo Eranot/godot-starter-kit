@@ -14,6 +14,7 @@ func _on_play_button_pressed():
 
 func _on_options_button_pressed():
 	var scene = load(options_scene_file).instantiate()
+	scene.show_buttons = false
 	add_child(scene)
 
 func _on_credits_button_pressed():

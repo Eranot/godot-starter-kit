@@ -18,7 +18,6 @@ menu_scene_file = "res://scenes/menu/main_menu/main_menu.tscn"
 [node name="GodotScreen" type="VBoxContainer" parent="."]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,7 +27,6 @@ theme_override_constants/separation = 8
 alignment = 1
 
 [node name="Label" type="Label" parent="GodotScreen"]
-layout_mode = 2
 theme_type_variation = &"HeaderLarge"
 theme_override_font_sizes/font_size = 50
 text = "Made with"
@@ -36,7 +34,6 @@ horizontal_alignment = 1
 
 [node name="Logo" type="TextureRect" parent="GodotScreen"]
 custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
 texture = ExtResource("3_c4ds0")
 ignore_texture_size = true
 stretch_mode = 5
@@ -44,7 +41,6 @@ stretch_mode = 5
 [node name="RecursivoScreen" type="ColorRect" parent="."]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -52,7 +48,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="RecursivoScreen"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -64,13 +59,11 @@ theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
 [node name="VBox" type="VBoxContainer" parent="RecursivoScreen/MarginContainer"]
-layout_mode = 2
 theme_override_constants/separation = 8
 alignment = 1
 
 [node name="Logo" type="TextureRect" parent="RecursivoScreen/MarginContainer/VBox"]
 custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
 texture = ExtResource("4_gjck5")
 ignore_texture_size = true
 stretch_mode = 5

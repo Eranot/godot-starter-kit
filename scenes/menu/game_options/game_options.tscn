@@ -16,6 +16,7 @@ theme = ExtResource("1_t3thu")
 script = ExtResource("2_f83iy")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,87 +24,75 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 1136.0
-offset_bottom = 632.0
+layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
-offset_right = 1120.0
-offset_bottom = 616.0
+layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
-offset_left = 16.0
-offset_top = 16.0
-offset_right = 1104.0
-offset_bottom = 600.0
+layout_mode = 2
 
 [node name="TitleHBox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-offset_right = 1088.0
-offset_bottom = 37.0
+layout_mode = 2
 
 [node name="Title" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TitleHBox"]
-offset_top = 4.0
-offset_right = 1030.0
-offset_bottom = 33.0
+layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"HeaderLarge"
 text = "Options"
 vertical_alignment = 1
 
 [node name="CloseButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TitleHBox" instance=ExtResource("3_d2pc7")]
-offset_left = 1034.0
-offset_right = 1088.0
-offset_bottom = 37.0
+layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = " X "
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-offset_top = 41.0
-offset_right = 1088.0
-offset_bottom = 53.0
+layout_mode = 2
 
 [node name="OptionsVBox" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-offset_top = 57.0
-offset_right = 1088.0
-offset_bottom = 163.0
+layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="MusicVolumeContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox"]
-offset_right = 1088.0
-offset_bottom = 45.0
+layout_mode = 2
 
 [node name="MusicVolumeLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/MusicVolumeContainer"]
-offset_right = 1088.0
-offset_bottom = 25.0
+layout_mode = 2
 theme_type_variation = &"HeaderMedium"
 text = "Music volume"
 
 [node name="MusicVolumeSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/MusicVolumeContainer"]
 unique_name_in_owner = true
-offset_top = 29.0
-offset_right = 1088.0
-offset_bottom = 45.0
+layout_mode = 2
 value = 50.0
 
 [node name="SFXVolumeContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox"]
-offset_top = 61.0
-offset_right = 1088.0
-offset_bottom = 106.0
+layout_mode = 2
 
 [node name="SFXVolumeLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/SFXVolumeContainer"]
-offset_right = 1088.0
-offset_bottom = 25.0
+layout_mode = 2
 theme_type_variation = &"HeaderMedium"
 text = "SFX volume"
 
 [node name="SFXVolumeSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/SFXVolumeContainer"]
 unique_name_in_owner = true
-offset_top = 29.0
-offset_right = 1088.0
-offset_bottom = 45.0
+layout_mode = 2
 value = 50.0
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="ButtonsHBox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BackToMenuButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonsHBox" instance=ExtResource("3_d2pc7")]
+layout_mode = 2
+text = "Back to menu"
 
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TitleHBox/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/MusicVolumeContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/SFXVolumeContainer/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonsHBox/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
