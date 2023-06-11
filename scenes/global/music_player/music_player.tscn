@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c31dexxmy8v1n"]
+
+[ext_resource type="AudioStream" uid="uid://cndne73ptmexy" path="res://assets/audio/music/empty-mind.mp3" id="1_c2ca2"]
+[ext_resource type="Script" path="res://scenes/global/music_player/music_player.gd" id="1_v6kww"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_c2ca2")
+volume_db = -10.0
+bus = &"music"
+script = ExtResource("1_v6kww")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true

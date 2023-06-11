@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://hpgh6wlhkdfq"]
 
-[ext_resource type="Theme" uid="uid://dijqjy6cqknsb" path="res://assets/themes/ui_theme.tres" id="1_4mwrq"]
+[ext_resource type="Theme" uid="uid://dijqjy6cqknsb" path="res://resources/themes/ui_theme.tres" id="1_4mwrq"]
 [ext_resource type="Script" path="res://scenes/menu/credits/credits.gd" id="2_25dm6"]
 [ext_resource type="Texture2D" uid="uid://d2lu1riguhfbw" path="res://assets/sprites/ui/options-background.png" id="3_2hfol"]
 [ext_resource type="Script" path="res://addons/max_size_container/max_size_container.gd" id="4_ldw2x"]
-[ext_resource type="PackedScene" uid="uid://dx3j6taat0hti" path="res://scenes/ui/button/button.tscn" id="4_s0mks"]
+[ext_resource type="PackedScene" uid="uid://dx3j6taat0hti" path="res://scenes/ui/primary_button/primary_button.tscn" id="4_s0mks"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3

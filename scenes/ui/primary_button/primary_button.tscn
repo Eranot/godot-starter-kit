@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx3j6taat0hti"]
+
+[ext_resource type="Script" path="res://scenes/ui/primary_button/primary_button.gd" id="1_nvsh7"]
+[ext_resource type="AudioStream" uid="uid://dfp7dy2qss2i2" path="res://assets/audio/sfx/hover-button.mp3" id="2_le7ek"]
+
+[node name="PrimaryButton" type="Button"]
+texture_filter = 1
+focus_mode = 0
+theme_type_variation = &"PrimaryButton"
+text = "Button"
+script = ExtResource("1_nvsh7")
+hover_sound = ExtResource("2_le7ek")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

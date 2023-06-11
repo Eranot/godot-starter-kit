@@ -6,8 +6,9 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if(!SoundController.get_music_player().is_playing):
-		SoundController.get_music_player().play_sound("empty-mind.mp3")
+	MusicPlayer.play()
+#	if(!SoundController.get_music_player().is_playing):
+#		SoundController.get_music_player().play_sound("empty-mind.mp3")
 
 func _on_play_button_pressed():
 	get_tree().change_scene_to_file(play_scene_file)

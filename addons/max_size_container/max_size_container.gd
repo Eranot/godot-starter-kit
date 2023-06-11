@@ -54,7 +54,7 @@ func _initialize(p_child: Node) -> void:
 	is_initialized = true
 
 
-func add_child(node: Node, force_readable_name: bool = false, internal: int = 0) -> void:
+func add_child(node: Node, force_readable_name: bool = false, internal: InternalMode = InternalMode.INTERNAL_MODE_DISABLED) -> void:
 	# Overloading add_child() to detect when a child node comes
 	super.add_child(node, force_readable_name, internal)
 	

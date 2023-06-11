@@ -17,11 +17,14 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SoundController="*res://global/sound_controller/sound_controller.tscn"
-AlertModalGlobal="*res://global/alert_modal/alert_modal_global.gd"
+MusicPlayer="*res://scenes/global/music_player/music_player.tscn"
+AlertModalGlobal="*res://scenes/global/alert_modal/alert_modal_global.gd"
 
 [display]
 
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/size/resizable=false
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 @export_file("*.tscn") var options_scene_file
 
