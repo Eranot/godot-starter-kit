@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://dijqjy6cqknsb"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://dijqjy6cqknsb"]
 
 [ext_resource type="FontFile" uid="uid://dp7grgyaktl78" path="res://assets/fonts/visitor.ttf" id="1_f4oi8"]
 [ext_resource type="Texture2D" uid="uid://clpagpr53vgjg" path="res://assets/sprites/ui/button-normal.png" id="2_qlmj3"]
@@ -12,6 +12,41 @@ region_rect = Rect2(0, 0, 33, 30)
 content_margin_top = 9.0
 texture = ExtResource("3_3sk0c")
 region_rect = Rect2(0, 0, 33, 30)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mjwls"]
+size = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_djhuy"]
+size = Vector2(0, 0)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_reguj"]
+size = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57wd1"]
+bg_color = Color(0.878431, 0.721569, 0.439216, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p07kt"]
+bg_color = Color(0.878431, 0.721569, 0.439216, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0t2iq"]
+content_margin_left = 6.0
+content_margin_top = 16.0
+content_margin_right = 6.0
+content_margin_bottom = 16.0
+bg_color = Color(0.419608, 0.313726, 0.321569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h77pi"]
+bg_color = Color(0.313726, 0.615686, 0.941176, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j1s7g"]
 load_path = "res://.godot/imported/button-normal.png-0b5e96e4c34f47406b6ae370d4adc92f.ctex"
@@ -56,7 +91,15 @@ Button/styles/hover = SubResource("StyleBoxTexture_4h2v6")
 Button/styles/normal = SubResource("StyleBoxTexture_4h2v6")
 Button/styles/pressed = SubResource("StyleBoxTexture_q21hg")
 HSeparator/constants/separation = 12
+HSlider/icons/grabber = SubResource("PlaceholderTexture2D_mjwls")
+HSlider/icons/grabber_disabled = SubResource("PlaceholderTexture2D_djhuy")
+HSlider/icons/grabber_highlight = SubResource("PlaceholderTexture2D_reguj")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_57wd1")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_p07kt")
+HSlider/styles/slider = SubResource("StyleBoxFlat_0t2iq")
 Label/fonts/font = ExtResource("1_f4oi8")
+MainPanel/base_type = &"PanelContainer"
+MainPanel/styles/panel = SubResource("StyleBoxFlat_h77pi")
 MarginContainer/constants/margin_bottom = 16
 MarginContainer/constants/margin_left = 16
 MarginContainer/constants/margin_right = 16

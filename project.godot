@@ -12,7 +12,7 @@ config_version=5
 
 config/name="StarterKit"
 run/main_scene="res://scenes/menu/splash_screen/splash_screen.tscn"
-config/features=PackedStringArray("4.0", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -30,7 +30,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/max_size_container/plugin.cfg")
+enabled=PackedStringArray()
 
 [rendering]
 

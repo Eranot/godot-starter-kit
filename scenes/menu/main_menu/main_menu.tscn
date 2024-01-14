@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://tij21ihdxvel"]
+[gd_scene load_steps=6 format=3 uid="uid://tij21ihdxvel"]
 
 [ext_resource type="Theme" uid="uid://dijqjy6cqknsb" path="res://resources/themes/ui_theme.tres" id="1_rlbgw"]
 [ext_resource type="Script" path="res://scenes/menu/main_menu/main_menu.gd" id="2_2sew7"]
 [ext_resource type="Texture2D" uid="uid://dssyq1e67vbei" path="res://assets/sprites/ui/menu-background.png" id="3_70o2q"]
 [ext_resource type="PackedScene" uid="uid://dx3j6taat0hti" path="res://scenes/ui/primary_button/primary_button.tscn" id="4_7pu57"]
-[ext_resource type="Script" path="res://addons/max_size_container/max_size_container.gd" id="4_eqyov"]
 [ext_resource type="Texture2D" uid="uid://qw44hxolw61n" path="res://assets/sprites/ui/game-logo.png" id="5_b0uab"]
 
 [node name="MainMenu" type="Control"]
@@ -32,10 +31,17 @@ texture = ExtResource("3_70o2q")
 stretch_mode = 6
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -173.0
+offset_right = 107.0
+offset_bottom = 173.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 24
@@ -43,38 +49,28 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="MaxSizeContainer" type="MarginContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 0
-script = ExtResource("4_eqyov")
-max_size = Vector2(350, 0)
-
-[node name="ButtonsContainer" type="VBoxContainer" parent="MarginContainer/MaxSizeContainer"]
+[node name="ButtonsContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Logo" type="TextureRect" parent="MarginContainer/MaxSizeContainer/ButtonsContainer"]
+[node name="Logo" type="TextureRect" parent="MarginContainer/ButtonsContainer"]
 custom_minimum_size = Vector2(166, 145)
 layout_mode = 2
 texture = ExtResource("5_b0uab")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="PlayButton" parent="MarginContainer/MaxSizeContainer/ButtonsContainer" instance=ExtResource("4_7pu57")]
+[node name="PlayButton" parent="MarginContainer/ButtonsContainer" instance=ExtResource("4_7pu57")]
 layout_mode = 2
 text = "Play"
 
-[node name="OptionsButton" parent="MarginContainer/MaxSizeContainer/ButtonsContainer" instance=ExtResource("4_7pu57")]
+[node name="OptionsButton" parent="MarginContainer/ButtonsContainer" instance=ExtResource("4_7pu57")]
 layout_mode = 2
 text = "Options"
 
-[node name="CreditsButton" parent="MarginContainer/MaxSizeContainer/ButtonsContainer" instance=ExtResource("4_7pu57")]
+[node name="CreditsButton" parent="MarginContainer/ButtonsContainer" instance=ExtResource("4_7pu57")]
 layout_mode = 2
 text = "Credits"
 
-[connection signal="pressed" from="MarginContainer/MaxSizeContainer/ButtonsContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="MarginContainer/MaxSizeContainer/ButtonsContainer/OptionsButton" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="MarginContainer/MaxSizeContainer/ButtonsContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonsContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonsContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ButtonsContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

@@ -24,6 +24,7 @@ grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
+theme_type_variation = &"MainPanel"
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
 layout_mode = 2
@@ -50,9 +51,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = " X "
 
-[node name="HSeparator" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
 [node name="OptionsVBox" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 16
@@ -67,39 +65,39 @@ text = "Music volume"
 
 [node name="MusicVolumeSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/MusicVolumeContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 max_value = 1.0
 step = 0.01
 value = 1.0
 
 [node name="SFXVolumeContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
 [node name="SFXVolumeLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/SFXVolumeContainer"]
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_type_variation = &"HeaderMedium"
 text = "SFX volume"
 
 [node name="SFXVolumeSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/SFXVolumeContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 max_value = 1.0
 step = 0.01
 value = 1.0
 
-[node name="HSeparator2" type="HSeparator" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 24
-
-[node name="ButtonsHBox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ButtonsHBox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="BackToMenuButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonsHBox" instance=ExtResource("3_d2pc7")]
+[node name="BackToMenuButton" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/ButtonsHBox" instance=ExtResource("3_d2pc7")]
 layout_mode = 2
 text = "Back to menu"
 
 [connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/TitleHBox/CloseButton" to="." method="_on_close_button_pressed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/MusicVolumeContainer/MusicVolumeSlider" to="." method="_on_music_volume_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/SFXVolumeContainer/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
-[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonsHBox/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/OptionsVBox/ButtonsHBox/BackToMenuButton" to="." method="_on_back_to_menu_button_pressed"]
